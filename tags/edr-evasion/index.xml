@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>EDR evasion on Yahya</title>
-    <link>yodev.me/tags/edr-evasion/</link>
+    <link>/tags/edr-evasion/</link>
     <description>Recent content in EDR evasion on Yahya</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 18 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="yodev.me/tags/edr-evasion/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/edr-evasion/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Confuse EDRs Even When You Are Sleeping</title>
-      <link>yodev.me/posts/01/</link>
+      <link>/posts/01/</link>
       <pubDate>Wed, 18 Sep 2024 00:00:00 +0000</pubDate>
       
-      <guid>yodev.me/posts/01/</guid>
+      <guid>/posts/01/</guid>
       <description>Introduction: When writing a beacon or any type of malware, how we evade detection is often more important than what the malware does or the type of data it can exfiltrate. One of the toughest challenges in evading detection is delaying execution for any reason. If we simply rely on syscalls like NtDelayExecution() and NtWaitForSingleObject(), EDRs and memory scanning tools can easily spot and terminate our sleeping beacons. In this blog, we’ll explore one of the simplest ways to delay execution without using any of these common syscalls, making it harder for EDRs to detect your beacon.</description>
     </item>
     

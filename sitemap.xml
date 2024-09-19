@@ -2,27 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>yodev.me/posts/01/</loc>
+    <loc>/posts/01/</loc>
     <lastmod>2024-09-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>yodev.me/tags/edr-evasion/</loc>
+    <loc>/tags/edr-evasion/</loc>
     <lastmod>2024-09-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>yodev.me/tags/evasion-technique/</loc>
+    <loc>/tags/evasion-technique/</loc>
     <lastmod>2024-09-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>yodev.me/tags/malware-devlopment/</loc>
+    <loc>/tags/malware-devlopment/</loc>
     <lastmod>2024-09-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>yodev.me/posts/</loc>
+    <loc>/posts/</loc>
     <lastmod>2024-09-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>yodev.me/tags/</loc>
+    <loc>/tags/</loc>
     <lastmod>2024-09-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>yodev.me/</loc>
+    <loc>/</loc>
     <lastmod>2024-09-18T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>yodev.me/categories/</loc>
+    <loc>/categories/</loc>
   </url>
 </urlset>

@@ -2,35 +2,35 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on Yahya</title>
-    <link>yodev.me/tags/</link>
+    <link>/tags/</link>
     <description>Recent content in Tags on Yahya</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 18 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="yodev.me/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 18 Sep 2024 00:00:00 +0000</lastBuildDate><atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>EDR evasion</title>
-      <link>yodev.me/tags/edr-evasion/</link>
+      <link>/tags/edr-evasion/</link>
       <pubDate>Wed, 18 Sep 2024 00:00:00 +0000</pubDate>
       
-      <guid>yodev.me/tags/edr-evasion/</guid>
+      <guid>/tags/edr-evasion/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Evasion Technique</title>
-      <link>yodev.me/tags/evasion-technique/</link>
+      <link>/tags/evasion-technique/</link>
       <pubDate>Wed, 18 Sep 2024 00:00:00 +0000</pubDate>
       
-      <guid>yodev.me/tags/evasion-technique/</guid>
+      <guid>/tags/evasion-technique/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Malware Devlopment</title>
-      <link>yodev.me/tags/malware-devlopment/</link>
+      <link>/tags/malware-devlopment/</link>
       <pubDate>Wed, 18 Sep 2024 00:00:00 +0000</pubDate>
       
-      <guid>yodev.me/tags/malware-devlopment/</guid>
+      <guid>/tags/malware-devlopment/</guid>
       <description></description>
     </item>
     
