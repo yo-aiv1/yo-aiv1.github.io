@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <style>
+        :root {
+            --accent-color: #FF4D4D;
+        }
+    </style>
+
+    
+    <link rel="icon" href="/images/avatar.jpg">
+    
+    
+    
+    
+    
+
+    
+    <title>Confuse EDRs Even When You Are Sleeping</title>
+    <meta name="description" content="">
+    <meta name="keywords" content='blog, gokarna, hugo, EDR evasion, Malware Devlopment, Evasion Technique'>
+
+    <meta property="og:url" content="yodev.me/posts/01/">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Confuse EDRs Even When You Are Sleeping">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="/images/avatar.jpg">
+    <meta property="og:image:secure_url" content="/images/avatar.jpg">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Confuse EDRs Even When You Are Sleeping">
+    <meta name="twitter:description" content="">
+    <meta property="twitter:domain" content="yodev.me/posts/01/">
+    <meta property="twitter:url" content="yodev.me/posts/01/">
+    <meta name="twitter:image" content="/images/avatar.jpg">
+
+    
+    <link rel="canonical" href="yodev.me/posts/01/">
+
+    
+    <link rel="stylesheet" type="text/css" href="/yodev.me/css/normalize.min.css" media="print">
+
+    
+    <link rel="stylesheet" type="text/css" href="/yodev.me/css/main.min.css">
+
+    
+    <link id="dark-theme" rel="stylesheet" href="/yodev.me/css/dark.min.css">
+
+    
+    <script src="/yodev.me/js/bundle.min.5ea990cb9da546575e076f961db84b9b116181b58a504215409569fe8de93aa0.js" integrity="sha256-XqmQy52lRldeB2&#43;WHbhLmxFhgbWKUEIVQJVp/o3pOqA="></script>
+
+    
+    
+        <!-- KaTeX -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css" integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC" crossorigin="anonymous">
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.js" integrity="sha384-X/XCfMm41VSsqRNQgDerQczD69XqmjOOOwYQvr/uuC+j4OPoNhVgjdGFwhvN02Ja" crossorigin="anonymous"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/contrib/auto-render.min.js" integrity="sha384-+XBljXPPiv+OzfbB3cVmLHf4hdUFHlWNZN5spNQ7rmHTXpd7WvJum6fIACpNNfIR" crossorigin="anonymous"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement(document.body, {
+          // customised options
+          // • auto-render specific keys, e.g.:
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false},
+          ],
+          // • rendering keys, e.g.:
+          throwOnError : false
+        });
+      });
+    </script>
+  
+    
+</head>
+<body>
+        <script>
+            
+            setThemeByUserPref();
+        </script><header class="header">
+    <nav class="header-nav">
+
+    
+    
+        <div class="nav-links">
+            
+            <div class="nav-link">
+                <a href="yodev.me/yodev.me/"><span data-feather='home'></span> Home </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="yodev.me/yodev.me/posts/"><span data-feather='book'></span> Posts </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="yodev.me/yodev.me/projects/"><span data-feather='code'></span> Projects </a>
+            </div>
+            
+            <div class="nav-link">
+                <a href="yodev.me/yodev.me/tags/"><span data-feather='tag'></span> Tags </a>
+            </div>
+            
+
+            <span class="nav-icons-divider"></span>
+            <div class="nav-link dark-theme-toggle">
+                <span class="sr-only dark-theme-toggle-screen-reader-target"></span>
+                <a>
+                    <span class="theme-toggle-icon" data-feather="moon"></span>
+                </a>
+            </div>
+
+            <div class="nav-link" id="hamburger-menu-toggle">
+                <span class="sr-only hamburger-menu-toggle-screen-reader-target">menu</span>
+                <a>
+                    <span data-feather="menu"></span>
+                </a>
+            </div>
+
+            
+            <ul class="nav-hamburger-list visibility-hidden">
+                
+                <li class="nav-item">
+                    <a href="yodev.me/yodev.me/"><span data-feather='home'></span> Home </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="yodev.me/yodev.me/posts/"><span data-feather='book'></span> Posts </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="yodev.me/yodev.me/projects/"><span data-feather='code'></span> Projects </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a href="yodev.me/yodev.me/tags/"><span data-feather='tag'></span> Tags </a>
+                </li>
+                
+                <li class="nav-item dark-theme-toggle">
+                    <span class="sr-only dark-theme-toggle-screen-reader-target">theme</span>
+                    <a>
+                        <span class="theme-toggle-icon" data-feather="moon"></span>
+                    </a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+</header>
+<main id="content">
+    <div class="post container">
+    <div class="post-header-section">
+        <h1>Confuse EDRs Even When You Are Sleeping</h1>
+        <small role="doc-subtitle"></small>
+        <p class="post-date">September 18, 2024
+        
+        </p>
+
+        <ul class="post-tags">
+        
+            <li class="post-tag"><a href="yodev.me/tags/edr-evasion">EDR evasion</a></li>
+        
+            <li class="post-tag"><a href="yodev.me/tags/malware-devlopment">Malware Devlopment</a></li>
+        
+            <li class="post-tag"><a href="yodev.me/tags/evasion-technique">Evasion Technique</a></li>
+        
+        </ul>
+    </div>
+
+    <div class="post-content">
+        <h2 id="introduction">Introduction:</h2>
+<p>When writing a beacon or any type of malware, how we evade detection is often more important than what the malware does or the type of data it can exfiltrate. One of the toughest challenges in evading detection is delaying execution for any reason. If we simply rely on syscalls like <code>NtDelayExecution()</code> and <code>NtWaitForSingleObject()</code>, EDRs and memory scanning tools can easily spot and terminate our sleeping beacons.
+In this blog, we’ll explore one of the simplest ways to delay execution without using any of these common syscalls, making it harder for EDRs to detect your beacon.</p>
+<h2 id="why-does-my-beacons-nap-keep-getting-interrupted-by-edrs">Why Does My Beacon’s Nap Keep Getting Interrupted by EDRs?</h2>
+<p>The first thing that raises suspicion for EDRs and memory scanning tools is the state of the thread. To better understand why, we need to look at what these syscalls actually do.</p>
+<h4 id="ntwaitforsingleobject"><strong><code>NtWaitForSingleObject()</code>:</strong></h4>
+<p>This function waits for a specific object (like a mutex, event, or semaphore) to be signaled. Here&rsquo;s what happens:</p>
+<ol>
+<li><strong>Call to <code>NtWaitForSingleObject()</code></strong>.</li>
+</ol>
+<ul>
+<li>The thread requests to wait for an object (e.g., a file, an event, or a resource lock).</li>
+</ul>
+<ol start="2">
+<li><strong>Thread Status Change</strong>:</li>
+</ol>
+<ul>
+<li>The thread’s state changes to <strong>&ldquo;waiting&rdquo;</strong> while it waits for the object to be signaled (released).</li>
+<li>The thread is not using CPU time while in this waiting state.</li>
+</ul>
+<ol start="3">
+<li><strong>Object Signaled</strong>:</li>
+</ol>
+<ul>
+<li>Once the object becomes available (signaled), or if a timeout is specified and the time expires, the thread&rsquo;s state changes back to <strong>&ldquo;ready&rdquo;</strong> or <strong>&ldquo;running&rdquo;</strong>.</li>
+<li>The thread resumes execution.</li>
+</ul>
+<h4 id="ntdelayexecution"><strong><code>NtDelayExecution()</code>:</strong></h4>
+<p>This function delays the execution of a thread for a specified period of time:</p>
+<ol>
+<li><strong>Call to <code>NtDelayExecution()</code></strong>.</li>
+</ol>
+<ul>
+<li>The thread requests to be paused (delayed) for a given duration.</li>
+</ul>
+<ol start="2">
+<li><strong>Thread Status Change</strong>:</li>
+</ol>
+<ul>
+<li>The thread’s state changes to <strong>&ldquo;waiting&rdquo;</strong> or <strong>&ldquo;sleeping&rdquo;</strong> (specifically for a timed wait).</li>
+<li>The thread is paused for the duration specified in the function and does not use CPU time during this period.</li>
+</ul>
+<ol start="3">
+<li><strong>Delay Ends</strong>:</li>
+</ol>
+<ul>
+<li>Once the delay expires, the thread’s state changes back to <strong>&ldquo;ready&rdquo;</strong> or <strong>&ldquo;running&rdquo;</strong>.</li>
+<li>The thread continues execution.</li>
+</ul>
+<p>Did you notice? Both of these system calls change the thread&rsquo;s state to &ldquo;waiting&rdquo;. The first thing EDRs look for are unfamiliar threads that are in the &ldquo;waiting&rdquo; state before doing a memory scan to that thread.<br>
+Now that we know how EDRs catch us, we can figure out a way to avoid detection. We&rsquo;ll do this by creating our own delay execution routine that doesn’t change the thread’s state or rely on system calls.</p>
+<h2 id="the-clock-is-the-key">The Clock Is The Key</h2>
+<p>The easiest technique is using the system time, which we can access without making any API calls, thanks to the <code>KUSER_SHARED_DATA</code> structure. This structure contains various information about the system, but we’re only interested in the time. Since it’s located at a fixed memory address, all of its members are also at fixed addresses, allowing us to retrieve the time directly. The time is stored at the memory address <code>0x7FFE0014</code>, which points to a 64-bit value representing the time in <a href="https://learn.microsoft.com/en-us/windows/win32/sysinfo/file-times">file time</a> stamp, and is constantly updated.</p>
+<p>For this example, I’ll use assembly to for faster execution, as it allows direct use of CPU registers instead of relying on the stack, which compilers often do. However, this technique can be implemented in other languages like C/C++ or Rust.</p>
+<h3 id="high-level-overview-of-the-delay-routine">High-Level Overview of the Delay Routine:</h3>
+<ul>
+<li>The routine takes one input: the number of seconds to delay execution.</li>
+<li>It converts the input into a file time stamp.</li>
+<li>The routine then adds the current time to the input and repeatedly checks if the updated time has been reached or surpassed. Once the condition is met, it returns.</li>
+</ul>
+<pre tabindex="0"><code class="language-assembly" data-lang="assembly">section .text
+    global DelayExecution
+
+DelayExecution:
+    mov rax, 0x989680       ; moving 10,000,000 to rax, we need it to convert seconds to file time stamp.
+    mul rcx                 ; multiply the value in rcx which is the argument that was passed to DelayExecution
+    mov rcx, 0x7FFE0014     ; moving the memory address that points to the current time in file time stamp to rcx
+    add rax, [rcx]          ; add the seconds we need to wait to the current time
+
+loop:
+    cmp rax, [rcx]          ; compare rax and the value rcx points to
+    ja loop                 ; jump to loop if rax greater to rcx which means we still didnt reach the time
+    ret                     ; if not it means we reached the time and we will return
+</code></pre><p>Here’s the equivalent C code for the assembly code:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-C" data-lang="C"><span style="color:#66d9ef">void</span> <span style="color:#a6e22e">DelayExecution</span>(<span style="color:#66d9ef">int</span> seconds) {
+    <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> <span style="color:#f92672">*</span>CurrentTime <span style="color:#f92672">=</span> (<span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span><span style="color:#f92672">*</span>)<span style="color:#ae81ff">0x7FFE0014</span>;
+    <span style="color:#66d9ef">unsigned</span> <span style="color:#66d9ef">long</span> <span style="color:#66d9ef">long</span> StopTime <span style="color:#f92672">=</span> (seconds <span style="color:#f92672">*</span> <span style="color:#ae81ff">0x989680</span>) <span style="color:#f92672">+</span> <span style="color:#f92672">*</span>CurrentTime;
+
+    <span style="color:#66d9ef">while</span> (<span style="color:#ae81ff">1</span>)
+    {
+        <span style="color:#66d9ef">if</span> (<span style="color:#f92672">*</span>CurrentTime <span style="color:#f92672">&gt;</span> StopTime) {
+            <span style="color:#66d9ef">break</span>;
+        }
+    }
+    <span style="color:#66d9ef">return</span>;
+}
+</code></pre></div><h2 id="closing-thoughts">Closing Thoughts</h2>
+<p>While this technique is easy to implement, there are ways to make it even better. Instead of just checking if we’ve reached the target time, we can add some garbage code or function calls that do nothing just to confuse analysts or EDRs and makes it harder for them to understand what’s going on.<br>
+Alternatively, we can avoid using time altogether and rely solely on garbage code. In this case, we would use algorithms that take a long time to run, like large matrix operations or complex floating-point calculations. The downside is that we can&rsquo;t control the exact delay time.</p>
+
+        
+    </div>
+
+    <div class="prev-next">
+        
+    </div>
+
+    
+    
+    <svg id="btt-button" class="arrow-logo" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 384 512" onclick="scrollToTop()" title="Go to top">
+        
+        <path d="M177 159.7l136 136c9.4 9.4 9.4 24.6 0 33.9l-22.6 22.6c-9.4 9.4-24.6 9.4-33.9 0L160 255.9l-96.4 96.4c-9.4 9.4-24.6 9.4-33.9 0L7 329.7c-9.4-9.4-9.4-24.6 0-33.9l136-136c9.4-9.5 24.6-9.5 34-.1z"/>
+    </svg>
+    <script>
+        let backToTopButton = document.getElementById("btt-button");
+
+        window.onscroll = function() {
+            scrollFunction()
+        };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                backToTopButton.style.display = "block";
+            } else {
+                backToTopButton.style.display = "none";
+            }
+        }
+
+        function scrollToTop() {
+            window.scrollTo(0, 0);
+        }
+    </script>
+    
+    
+</div>
+
+
+
+    
+
+        </main><footer class="footer">
+    
+    
+
+    
+</footer>
+</body>
+</html>
